@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "compilerOptions": {
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "strict": true,
+
+    // FIXME(bajtos) LB4 is not compatible with this setting yet
+    "strictPropertyInitialization": false,
+
+    // https://devblogs.microsoft.com/typescript/announcing-typescript-4-4/#use-unknown-catch-variables
+    "useUnknownInCatchVariables": false,
+
+    "incremental": true,
+
+    "lib": ["es2020"],
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "target": "es2018",
+    "sourceMap": true,
+    "declaration": true,
+    "importHelpers": true
+  }
+}

@@ -1,0 +1,1 @@
+{"version":3,"file":"common-types.js","sourceRoot":"","sources":["../src/common-types.ts"],"names":[],"mappings":";AAAA,sDAAsD;AACtD,oCAAoC;AACpC,+CAA+C;AAC/C,gEAAgE;;;AA6FhE;;;;;GAKG;AACU,QAAA,WAAW,CAAC,mBAAmB,GAAG;IAC7C,IAAI,EAAE,QAAiB;IACvB,KAAK,EAAE,gBAAgB;IACvB,mBAAmB,EAAE,4BAA4B;IACjD,UAAU,EAAE;QACV,KAAK,EAAE;YACL,IAAI,EAAE,QAAiB,EAAE,gDAAgD;SAC1E;KACF;CACF,CAAC"}

@@ -1,0 +1,18 @@
+{
+    "name": "boot-test-app",
+    "version": "1.0.0",
+    "description": "boot-test-app",
+    "keywords": [
+        "loopback-application",
+        "loopback"
+    ],
+    "engines": {
+        "node": "12 || 14 || 16 || 17"
+    },
+    "scripts": {},
+    "repository": {
+        "type": "git"
+    },
+    "author": "IBM Corp. and LoopBack contributors",
+    "license": "MIT"
+}

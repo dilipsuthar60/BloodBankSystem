@@ -1,0 +1,48 @@
+{
+  "name": "loopback-connector-mysql",
+  "version": "5.4.4",
+  "description": "MySQL connector for loopback-datasource-juggler",
+  "engines": {
+    "node": ">=8"
+  },
+  "main": "index.js",
+  "scripts": {
+    "pretest": "node pretest.js",
+    "lint": "eslint .",
+    "test": "mocha test/*.test.js node_modules/juggler-v3/test.js node_modules/juggler-v4/test.js",
+    "posttest": "npm run lint"
+  },
+  "files": [
+    "intl",
+    "lib",
+    "docs.json",
+    "index.js",
+    "setup.sh"
+  ],
+  "dependencies": {
+    "async": "^2.6.1",
+    "debug": "^3.1.0",
+    "lodash": "^4.17.11",
+    "loopback-connector": "^4.0.0",
+    "mysql": "^2.11.1",
+    "strong-globalize": "^5.0.5"
+  },
+  "devDependencies": {
+    "bluebird": "~2.9.10",
+    "eslint": "^4.3.0",
+    "eslint-config-loopback": "^8.0.0",
+    "juggler-v3": "file:./deps/juggler-v3",
+    "juggler-v4": "file:./deps/juggler-v4",
+    "loopback-datasource-juggler": "^3.0.0 || ^4.0.0",
+    "mocha": "^6.2.2",
+    "rc": "^1.0.0",
+    "should": "^8.0.2",
+    "sinon": "^1.15.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/strongloop/loopback-connector-mysql.git"
+  },
+  "license": "MIT",
+  "author": "IBM Corp."
+}
