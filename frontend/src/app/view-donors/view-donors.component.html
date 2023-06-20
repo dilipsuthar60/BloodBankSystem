@@ -1,0 +1,33 @@
+
+<div class="flex justify-center items-center text-4xl mt-7 font-bold text-gray-800 tracking-wide">Registered Donors For <span class="text-emerald-600 mx-1">{{ campName }}</span> Camp</div>
+
+
+
+<div class="overflow-hidden rounded-lg border border-gray-200 shadow-md m-5">
+  <table class="w-full border-collapse bg-white text-left text-sm text-gray-500">
+    <thead class="bg-emerald-400">
+      <th class="px-6 py-4 text-sm text-gray-900 font-bold">Sr. No</th>
+      <th class="px-6 py-4 text-sm text-gray-900 font-bold">Profile Image</th>
+      <th class="px-6 py-4 text-sm text-gray-900 font-bold">Name</th>
+      <th class="px-6 py-4 text-sm text-gray-900 font-bold">Gender</th>
+      <th class="px-6 py-4 text-sm text-gray-900 font-bold">Age</th>
+      <th class="px-6 py-4 text-sm text-gray-900 font-bold">Email</th>
+      <th class="px-6 py-4 text-sm text-gray-900 font-bold">Medical Condition</th>
+    </thead>
+    <tbody class="divide-y divide-gray-100 border-t border-gray-100">
+      <p *ngIf="registeredDonors.length === 0" class="text-center text-lg font-bold">No Donors Registered 😥</p>
+      <tr *ngFor="let donor of registeredDonors; let i = index"
+      class="hover:bg-emerald-100 transition-all">
+      <td class="px-5 py-3">{{ i + 1 }}</td>
+      <td class="px-5 py-3">
+        <img [src]="donor.image" alt="Profile Picture">
+      </td>
+      <td class="px-5 py-3 capitalize">{{ donor.name }}</td>
+      <td class="px-5 py-3">{{ donor.gender }}</td>
+        <td class="px-5 py-3">{{ donor.age }}</td>
+        <td class="px-5 py-3">{{ donor.email }}</td>
+        <td class="px-5 py-3">{{ donor.medicalCondition }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

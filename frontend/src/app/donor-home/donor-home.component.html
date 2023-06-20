@@ -1,0 +1,76 @@
+<div class="bg-rose-50 h-full min-h-screen">
+  <div class="relative">
+    <h1 class="absolute left-[30%] top-12 text-center text-5xl uppercase font-bold leading-9 tracking-wide text-rose-700">Blood</h1>
+    <h1 class="absolute right-[32%] mr-2 top-12 text-center text-5xl uppercase font-bold leading-9 tracking-wide text-rose-700">Bank
+      <span class="heart"><span class="heartbeat">🩸</span></span>
+    </h1>
+    <div class="sm:mx-auto sm:w-full sm:max-w-sm">
+      <img
+        class="mx-auto mt-0 w-32 h-28 shadow-danger shadow"
+        src="https://png.pngtree.com/element_our/20200609/ourlarge/pngtree-donate-blood-image_2224076.jpg"
+        alt="Your Company"
+      />
+    </div>
+    <h1 class="uppercase underline text-3xl my-2 mt-4 text-center text-rose-800">Camps List</h1>
+    <div (click)="logout()" class="absolute top-2 font-bold text-lg p-2 rounded cursor-pointer text-red-500 right-4 hover:text-xl drop-shadow-lg shadow bg-white transition-all tracking-wide">Log Out<svg class="ml-1 inline-block" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" id="logout">
+      <path fill="url(#paint0_linear_1233_4810)" fill-rule="evenodd" d="M16 4C16 3.44772 15.5523 3 15 3H3C2.44772 3 2 3.44772 2 4V20C2 20.5523 2.44772 21 3 21H15C15.5523 21 16 20.5523 16 20V17C16 16.4477 15.5523 16 15 16C14.4477 16 14 16.4477 14 17V19H4V5H14V7C14 7.55228 14.4477 8 15 8C15.5523 8 16 7.55228 16 7V4ZM16.7929 7.79289C16.4024 8.18342 16.4024 8.81658 16.7929 9.20711L18.5858 11H9C8.44772 11 8 11.4477 8 12C8 12.5523 8.44772 13 9 13H18.5858L16.7929 14.7929C16.4024 15.1834 16.4024 15.8166 16.7929 16.2071C17.1834 16.5976 17.8166 16.5976 18.2071 16.2071L21.7071 12.7071C22.0976 12.3166 22.0976 11.6834 21.7071 11.2929L18.2071 7.79289C17.8166 7.40237 17.1834 7.40237 16.7929 7.79289Z" clip-rule="evenodd"></path>
+      <defs>
+        <linearGradient id="paint0_linear_1233_4810" x1="12" x2="12" y1="3" y2="21" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#F857A6"></stop>
+          <stop offset="1" stop-color="#FF585A"></stop>
+        </linearGradient>
+      </defs>
+    </svg>
+    </div>
+  </div>
+
+
+
+  <div class="flex mt-4 justify-center drop-shadow">
+    <input type="text" class="p-2 border border-gray-300 rounded-lg mb-4 shadow-md shadow-rose-300" placeholder="Search Camps..." [(ngModel)]="searchQuery" (input)="filterCamps()" />
+  </div>
+  <div class="flex flex-wrap justify-center overflow-hidden">
+    <div class="m-4 shadow-lg bg-white" *ngFor="let camp of filteredCamps">
+      <div class="w-80 border border-gray-200 rounded-lg shadow hover:shadow-2xl transition-all">
+        <img class="rounded-t-lg ml-2 h-36 border-b-2 border-b-rose-700" src="https://gozo.news/wp-content/uploads/2019/02/Save_Life_Give_Blood_Malta.png" alt="" />
+        <div class="p-5 drop-shadow-sm">
+          <h5 class="mb-4 text-xl uppercase underline text-center font-bold tracking-tight text-gray-900">{{ camp.name }}</h5>
+          <div class="flex flex-col">
+            <div class="flex items-start mb-4">
+              <p class="mr-4 font-bold text-gray-600">Organised By:</p>
+              <p class="font-normal text-gray-500">{{ camp.createdBy }}</p>
+            </div>
+            <div class="flex items-start mb-4">
+              <p class="mr-4 font-bold text-gray-600">Location:</p>
+              <p class="font-normal text-gray-500">{{ camp.location }}</p>
+            </div>
+            <div class="flex items-start mb-3">
+              <p class="mr-4 font-bold text-gray-600">Date:</p>
+              <p class="font-normal text-gray-500">{{ camp.date }}</p>
+            </div>
+          </div>
+
+            <p class="mb-4 font-bold text-gray-600">Timings:
+              <span class="bg-gray-100 text-gray-800 text-xs ml-2 font-medium inline-flex items-center px-2.5 py-0.5 rounded mr-2 border border-gray-500">
+                <svg aria-hidden="true" class="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"></path></svg>
+                {{ convertTo12HourFormat(camp.startTime) }}
+              </span>-
+              <span class="bg-gray-100 text-gray-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded border border-gray-500">
+                <svg aria-hidden="true" class="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"></path></svg>
+                {{ convertTo12HourFormat(camp.endTime) }}
+              </span>
+            </p>
+            <!-- <button class="mt-2 w-full h-10 text-center font-bold cursor-pointer"
+              (click)="onButtonClick(camp)">
+            </button> -->
+            <button class="mt-2 w-full h-10 text-center font-bold cursor-pointer"
+              (click)="onButtonClick(camp)"
+              [ngClass]="{ button: !registeredCamps[camp.id], 'button-u': registeredCamps[camp.id] }"
+            >
+              {{ registeredCamps[camp.id] ? 'Unregister' : 'Register' }}
+            </button>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
